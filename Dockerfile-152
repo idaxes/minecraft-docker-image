@@ -3,7 +3,7 @@ FROM adoptopenjdk/openjdk8:latest as jdk
 MAINTAINER Laurence Daxes <laurencehr@gmail.com>
 
 ENV MINECRAFT_VERSION 1.15.2
-ENV RAM 1G
+ENV RAM 2G
 
 WORKDIR /data
 

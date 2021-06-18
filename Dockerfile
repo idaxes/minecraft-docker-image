@@ -1,14 +1,10 @@
-# Minecraft 1.11 Dockerfile - Example with notes
-
-# Use the offical Debian Docker image with a specified version tag, Stretch, so not all
-# versions of Debian images are downloaded.
 FROM adoptopenjdk/openjdk8:latest
 
-MAINTAINER Laurence HR <laurencehr@gmail.com>
+MAINTAINER Daxes <git@daxes.net>
 
-#ENV MINECRAFT_VERSION 1.14.4
-ENV MINECRAFT_VERSION 1.15.2
-ENV RAM 512
+ENV MINECRAFT_VERSION 1.16.4
+ENV RAMX 2G
+ENV RAMS 2G
 
 WORKDIR /data
 
@@ -22,4 +18,4 @@ VOLUME /data
 EXPOSE 25565
 
 #Automatically accept Minecraft EULA, and start Minecraft server
-CMD pwd && ls -l && java -Xmx${RAM}M -Xms${RAM}M -jar /data/server-${MINECRAFT_VERSION}.jar nogui
+CMD pwd && ls -l && java -Xms${RAMS}M -Xmx${RAMX}M -jar /data/server-${MINECRAFT_VERSION}.jar nogui
