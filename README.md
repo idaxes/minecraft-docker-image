@@ -12,7 +12,7 @@ sudo git clone https://github.com/idaxes/minecraft-docker-image.git dxscraft
 Puedes crear tu propia imagen docker
 
 ```bash
-docker build -f Dockerfile-164 -t minecraft:1.16.4 .
+docker build -f Dockerfile-201 -t minecraft-server:1.20.1 .
 ```
 
 ### Créditos:
