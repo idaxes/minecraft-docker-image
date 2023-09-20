@@ -1,9 +1,10 @@
-FROM adoptopenjdk/openjdk8:latest as jdk
+FROM eclipse-temurin:17-jre-alpine as jre
 
 MAINTAINER Laurence Daxes <laurencehr@gmail.com>
 
 ENV MINECRAFT_VERSION 1.20.1
-ENV RAM 2G
+ENV RAMS 2G
+ENV RAMX 2G
 
 WORKDIR /data
 
@@ -17,4 +18,4 @@ VOLUME /data
 EXPOSE 25565
 
 #Automatically accept Minecraft EULA, and start Minecraft server
-CMD pwd && ls -l && java -Xmx${RAM} -Xms${RAM} -jar /data/server-${MINECRAFT_VERSION}.jar nogui
+CMD pwd && ls -l && java -Xmx${RAMX} -Xms${RAMS} -jar /data/server-${MINECRAFT_VERSION}.jar nogui
