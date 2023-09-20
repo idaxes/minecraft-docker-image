@@ -1,10 +1,9 @@
-FROM adoptopenjdk/openjdk8:latest
+FROM adoptopenjdk/openjdk8:latest as jdk
 
-MAINTAINER Daxes <git@daxes.net>
+MAINTAINER Laurence Daxes <laurencehr@gmail.com>
 
-ENV MINECRAFT_VERSION 1.16.4
-ENV RAMX 2G
-ENV RAMS 2G
+ENV MINECRAFT_VERSION 1.20.1
+ENV RAM 2G
 
 WORKDIR /data
 
@@ -18,4 +17,4 @@ VOLUME /data
 EXPOSE 25565
 
 #Automatically accept Minecraft EULA, and start Minecraft server
-CMD pwd && ls -l && java -Xms${RAMS}M -Xmx${RAMX}M -jar /data/server-${MINECRAFT_VERSION}.jar nogui
+CMD pwd && ls -l && java -Xmx${RAM} -Xms${RAM} -jar /data/server-${MINECRAFT_VERSION}.jar nogui
